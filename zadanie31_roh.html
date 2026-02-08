@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP – Przykład 2</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+        }
+        #wynik {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            white-space: pre-line;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Programowanie obiektowe – Autobus (Przykład 2)</h1>
+
+<button onclick="pokazZadanie()">Zadanie</button>
+<button onclick="pokazKod()">KOD</button>
+
+<div id="wynik"></div>
+
+<script>
+    // ===== OBIEKT (z poprzedniego zadania) =====
+    let Autobus = {
+        ilu_pasazerow: 50,
+        linia: "20A",
+        kolor: "czerwony",
+
+        Autobus_wyswietl_Rohde: function () {
+            return "Metoda: Autobus_wyswietl_Rohde";
+        }
+    };
+
+    // ===== NOWA WŁAŚCIWOŚĆ (POZA CIAŁEM OBIEKTU) =====
+    Autobus.marka = "Solaris";
+
+    // ===== NOWA METODA (POZA CIAŁEM OBIEKTU) =====
+    Autobus.Autobus_pokaz_Rohde = function () {
+        return `
+Nazwa obiektu: Autobus
+
+Pola (właściwości):
+- ilu_pasazerow
+- linia
+- kolor
+- marka  (dodana poza ciałem obiektu)
+
+Metody:
+- Autobus_wyswietl_Rohde
+- Autobus_pokaz_Rohde  (dodana poza ciałem obiektu)
+        `;
+    };
+
+    function pokazZadanie() {
+        document.getElementById("wynik").innerText =
+            Autobus.Autobus_pokaz_Rohde();
+    }
+
+    function pokazKod() {
+        document.getElementById("wynik").innerHTML = `
+<pre>
+Autobus.marka = "Solaris";
+
+Autobus.Autobus_pokaz_Rohde = function () {
+    ...
+};
+</pre>
+        `;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie OOP – Autobus</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+        }
+        #wynik {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Programowanie obiektowe – Autobus</h1>
+
+<button onclick="pokazZadanie()">Zadanie</button>
+<button onclick="pokazKod()">KOD</button>
+
+<div id="wynik"></div>
+
+<script>
+    // definicja obiektu
+    let Autobus = {
+        ilu_pasazerow: 60,
+        linia: "A12",
+        kolor: "żółty",
+
+        Autobus_wyswietl_Rohde: function () {
+            return `
+Nazwa obiektu: Autobus
+
+Pola (właściwości):
+- ilu_pasazerow: ${this.ilu_pasazerow}
+- linia: ${this.linia}
+- kolor: ${this.kolor}
+
+Nazwa metody:
+- Autobus_wyswietl_Rohde
+            `;
+        }
+    };
+
+    function pokazZadanie() {
+        document.getElementById("wynik").innerText =
+            Autobus.Autobus_wyswietl_Rohde();
+    }
+
+    function pokazKod() {
+        document.getElementById("wynik").innerHTML = `
+<pre>
+let Autobus = {
+    ilu_pasazerow: 60,
+    linia: "A12",
+    kolor: "żółty",
+
+    Autobus_wyswietl_Rohde: function () {
+        ...
+    }
+};
+</pre>
+        `;
+    }
+</script>
+
+</body>
+</html>

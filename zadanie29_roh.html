@@ -1,0 +1,112 @@
+<H1>PYTANIA</H1> <H1>1. W jaki sposób można określić właściwość danego obiektu (dwa sposoby wraz z przykładami)?</H1> <H1>2. W jaki sposób można odwołać się do pól (właściwości) i metod?</H1> <H1>3. Wymień cechy charakterystyczne konstruktora.</H1> <H1>4. Konstruowanie obiektu na podstawie przykładu – obiekt ma trzy pola oraz jedną metodę.</H1> <H1>5. Znaczenie słowa this. Jak oddzielamy pola oraz metody?</H1> <H1>6. Konstruktor w JS na podstawie przykładu wraz z opisem.</H1> <H1>7. Znaczenie słowa kluczowego new wraz z przykładem.</H1> <H1>8. Znaczenie słowa kluczowego prototype wraz z przykładem i opisem.</H1>
+<H1>ODPOWIEDZI</H1> <H1>1. Określanie właściwości obiektu – dwa sposoby</H1>
+
+Sposób 1: notacja kropkowa
+
+let osoba = {};
+osoba.imie = "Jan";
+
+
+Sposób 2: notacja nawiasowa
+
+let osoba = {};
+osoba["imie"] = "Jan";
+
+
+Notacja nawiasowa jest szczególnie przydatna, gdy nazwa właściwości jest w zmiennej.
+
+<H1>2. Odwoływanie się do pól (właściwości) i metod</H1>
+
+Odwołanie do pola:
+
+osoba.imie;
+
+
+Odwołanie do metody:
+
+osoba.przedstawSie();
+
+
+Zawsze używamy nazwy obiektu, po której następuje kropka i nazwa pola lub metody.
+
+<H1>3. Cechy charakterystyczne konstruktora</H1>
+
+jest wywoływany automatycznie przy tworzeniu obiektu,
+
+posiada taką samą nazwę jak klasa lub funkcja konstruktora,
+
+służy do inicjalizacji pól obiektu,
+
+używa słowa kluczowego this,
+
+nie zwraca wartości (jawnie).
+
+<H1>4. Przykład obiektu: trzy pola i jedna metoda</H1>
+let samochod = {
+  marka: "Toyota",
+  model: "Corolla",
+  rok: 2020,
+  info: function() {
+    return this.marka + " " + this.model;
+  }
+};
+
+
+Pola: marka, model, rok
+Metoda: info()
+
+<H1>5. Znaczenie słowa this. Oddzielanie pól i metod</H1>
+
+Słowo this wskazuje na aktualny obiekt, na którym została wywołana metoda.
+
+this.marka;
+this.info();
+
+
+Pola i metody oddzielamy kropką (.), używając składni:
+
+this.nazwaPola
+this.nazwaMetody()
+
+<H1>6. Konstruktor w JavaScript – przykład i opis</H1>
+function Osoba(imie, wiek) {
+  this.imie = imie;
+  this.wiek = wiek;
+}
+
+
+Opis:
+
+Osoba jest funkcją konstruktora,
+
+this.imie i this.wiek to pola obiektu,
+
+konstruktor służy do tworzenia nowych obiektów na podstawie jednego wzorca.
+
+<H1>7. Znaczenie słowa kluczowego new</H1>
+
+Słowo kluczowe new:
+
+tworzy nowy obiekt,
+
+przypisuje this do nowego obiektu,
+
+wywołuje konstruktor,
+
+zwraca nowo utworzony obiekt.
+
+Przykład:
+
+let osoba1 = new Osoba("Anna", 25);
+
+<H1>8. Znaczenie słowa kluczowego prototype</H1>
+
+prototype służy do dodawania właściwości i metod wspólnych dla wszystkich obiektów danej klasy.
+
+Osoba.prototype.przywitajSie = function() {
+  return "Cześć, mam na imię " + this.imie;
+};
+
+
+BARDZO WAŻNE:
+Metody umieszczone w prototype NIE są kopiowane do każdego obiektu osobno, lecz są współdzielone, co oszczędza pamięć i poprawia wydajność programu.

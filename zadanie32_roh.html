@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP – Przykład 3</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+        }
+        #wynik {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            white-space: pre-line;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Programowanie obiektowe – Autobus (Przykład 3)</h1>
+
+<button onclick="pokazZadanie()">Zadanie</button>
+<button onclick="pokazKod()">KOD</button>
+
+<div id="wynik"></div>
+
+<script>
+    // ===== KONSTRUKTOR (ZAMIAST KLASY) =====
+    function Autobus(ilu_pasazerow, linia, kolor, marka) {
+        this.ilu_pasazerow = ilu_pasazerow;
+        this.linia = linia;
+        this.kolor = kolor;
+        this.marka = marka;
+    }
+
+    // ===== METODA DODANA PRZEZ PROTOTYPE =====
+    Autobus.prototype.wyswietlDane = function () {
+        return "Autobus: " +
+            this.ilu_pasazerow + " pas., linia " +
+            this.linia + ", kolor " +
+            this.kolor + ", marka " +
+            this.marka;
+    };
+
+    // ===== POWOŁANIE 3 OBIEKTÓW =====
+    let autobus1 = new Autobus(50, "20A", "czerwony", "Solaris");
+    let autobus2 = new Autobus(40, "15B", "niebieski", "MAN");
+    let autobus3 = new Autobus(60, "10C", "żółty", "Volvo");
+
+    // ===== DODATKOWA WŁAŚCIWOŚĆ (POZA OBIEKTEM) =====
+    autobus1.rok_produkcji = 2018;
+
+    // ===== DODATKOWA METODA (POZA OBIEKTEM) =====
+    autobus1.Autobus_pokaz_Rohde = function () {
+        return `
+Nazwa obiektu: Autobus
+
+Pola:
+- ilu_pasazerow
+- linia
+- kolor
+- marka
+- rok_produkcji (dodane poza obiektem)
+
+Metody:
+- wyswietlDane (prototype)
+- Autobus_pokaz_Rohde (poza obiektem)
+        `;
+    };
+
+    function pokazZadanie() {
+        document.getElementById("wynik").innerText =
+            autobus1.wyswietlDane() + "\n" +
+            autobus2.wyswietlDane() + "\n" +
+            autobus3.wyswietlDane() + "\n\n" +
+            autobus1.Autobus_pokaz_Rohde();
+    }
+
+    function pokazKod() {
+        document.getElementById("wynik").innerHTML = `
+<pre>
+function Autobus(...) { ... }
+
+Autobus.prototype.wyswietlDane = function() { ... }
+
+let autobus1 = new Autobus(...);
+</pre>
+        `;
+    }
+</script>
+
+</body>
+</html>
