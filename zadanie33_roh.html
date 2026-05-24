@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie użytkownika</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Logowanie</h2>
+
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Login (email)" required>
+        <input type="password" id="password" placeholder="Hasło" required>
+        <button type="submit">Zaloguj</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        // 1. Konstruktor User
+        function User(email, password, avatarUrl) {
+            this.email = email;
+            this.password = password;
+            this.avatarUrl = avatarUrl;
+        }
+
+        // 2. Obiekt userList
+        const userList = {
+            users: [],
+
+            addUser(user) {
+                this.users.push(user);
+            },
+
+            login(email, password) {
+                return this.users.some(user =>
+                    user.email === email &&
+                    user.password === password
+                );
+            }
+        };
+
+        // Dodanie przykładowych użytkowników
+        const user1 = new User(
+            "test@test.pl",
+            "1234",
+            "https://example.com/avatar1.png"
+        );
+
+        const user2 = new User(
+            "admin@admin.pl",
+            "admin",
+            "https://example.com/avatar2.png"
+        );
+
+        userList.addUser(user1);
+        userList.addUser(user2);
+
+        // 3. Obsługa formularza logowania
+        const form = document.getElementById("loginForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const isLogged = userList.login(email, password);
+
+            if (isLogged) {
+                message.textContent = "Zalogowano poprawnie!";
+                message.style.color = "green";
+            } else {
+                message.textContent = "Nieprawidłowy login lub hasło!";
+                message.style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+</html>

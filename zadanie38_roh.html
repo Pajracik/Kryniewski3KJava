@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Rohde Z38</title>
+<style>
+ #demo_rohde {
+ color: red;
+ font-size: 40px;
+ }
+</style>
+</head>
+ <body>
+ <div style="color: red; font-size: 1cm;"><center>rohde<center></div><br>
+ <div style="color: green; font-size: 12mm;"> Pojęcie rozdzielczość ekranu/monitora oznacza liczbe pikseli wyświetlanych na ekranie w poziomie i pionie </div><br>
+<div style="color: blue; font-size: 50px;"> Pojęcie szerokość/wysokość ekranu przeglądarki w pikselach oznacza aktualny rozmiar widocznego obszaru strony internetowej w oknie przeglądarki. </div><br>
+<p id="demo_rohde"></p>
+<script>
+ var w = window.innerWidth;
+ var h = window.innerHeight;
+ var x = document.getElementById("demo_rohde");
+ x.innerHTML = "szerokość przeglądarki: " + w + ", wysokość: " + h + ".";
+ document.write("<font color=silver size=6>Twoja rozdzielczość ekranu to:</font>");
+ document.write("<font color=silver size=6>"+screen.width+"</font>");
+ document.write("<font color=silver size=6> na </font>");
+ document.write("<font color=silver size=6>"+screen.height+"</font>");
+ </script>
+ </body>
+</html>
+<!-- Rohde Z38_JS -->

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<title>Rohde Z40</title>
+<body>
+<div style="color:red;font-size:50px;">
+ <script language="JavaScript">
+var x=prompt("podaj argument x=","");
+ var x_roh=parseFloat(x);
+ document.write("wykonał Tomasz Rohde <br>");
+ document.write("czytany argument x="+x_roh+"<br>");
+ function f_roh(x_roh) {
+ if(x_roh>=2) {return 9;}
+ if((x_roh>=-2)&&(x_roh<0)) {return x_roh+1*x_roh+1;}
+ if((x_roh=>0)&&(x_roh<2)) {return x_roh*x_roh*x_roh;}
+ if(x_roh<-2) {return 1;}
+}
+ document.write("f("+x_roh+")="+f_roh(x_roh)+"<br>");
+
+ </script>
+</div>
+</body>
+</html>
+<!-- Rohde Z40_JS -->
