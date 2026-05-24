@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przykład użycia funkcji</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<div style="color:darkblue; font-size:45px; font-family:Arial, sans-serif;">
+<script language="JavaScript">
+var x1 = parseFloat(prompt("Podaj x1 =", ""));
+var x2 = parseFloat(prompt("Podaj x2 =", ""));
+
+function y1(x) {
+    return 3 * Math.pow(x, 6/8);
+}
+
+function degToRad(x) {
+    return (x * Math.PI) / 180;
+}
+
+function y2(x) {
+    var rad = degToRad(x);
+    return 2 * Math.cos(rad) + 3 * Math.sin(rad);
+}
+
+function y3(x1, x2) {
+    var x1_5 = Math.pow(x1, 5);
+    var x2_4 = Math.pow(x2, 4);
+    var diff = Math.abs(x1 - x2);
+    var pierwiastek = Math.cbrt(x1_5 + 2 * x2_4);
+    return pierwiastek * diff;
+}
+
+var wynikY1 = y1(x1);
+var wynikY2 = y2(x1);
+var wynikY3 = y3(x1, x2);
+var x1Rad = degToRad(x1);
+
+document.write("x1 = " + x1 + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+document.write("x2 = " + x2 + "<br>");
+document.write("x1 (stopnie) = " + x1 + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+document.write("x1 (radiany) = " + x1Rad.toFixed(2) + "<br>");
+document.write("y1 = " + wynikY1.toFixed(2) + "<br>");
+document.write("y2 = " + wynikY2.toFixed(2) + "<br>");
+document.write("y3 = " + wynikY3.toFixed(2) + "<br>");
+</script>
+</div>
+</body>
+</html>

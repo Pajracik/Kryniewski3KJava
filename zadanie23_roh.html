@@ -1,0 +1,47 @@
+<html>
+<head>
+<script language="JavaScript">
+function obliczDrabine(d,x) { 
+    var bokD = parseFloat(d);
+    var bokX = parseFloat(x);
+    var dlugoscDrabiny = Math.sqrt(bokD*bokD + bokX*bokX);
+
+    document.getElementsByName('wynikDrabina')[0].value = dlugoscDrabiny.toFixed(2);
+    alert("Drabina = " + dlugoscDrabiny.toFixed(2) + " cm");
+    document.getElementById("wynikDrabinaDiv").innerHTML = "<b>Drabina = " + dlugoscDrabiny.toFixed(2) + " cm</b><br>";
+}
+
+function obliczAlfa(d,x) {
+    var bokD = parseFloat(d);
+    var bokX = parseFloat(x);
+    var sinA = bokD / Math.sqrt(bokD*bokD + bokX*bokX);
+    var aRad = Math.asin(sinA);
+    var aDeg = aRad * (180 / Math.PI);
+
+    document.getElementsByName('wynikAlfa')[0].value = aDeg.toFixed(2);
+    alert("Kąt alfa = " + aDeg.toFixed(2) + "°");
+    document.getElementById("wynikAlfaDiv").innerHTML = "<b>Kąt alfa = " + aDeg.toFixed(2) + "°</b><br>";
+}
+</script>
+</head>
+<body style="font-family:Arial, sans-serif; color:darkblue;">
+<h2>Obliczanie długości drabiny i kąta</h2><br>
+
+<form name="formularz" onsubmit="obliczDrabine(this.bokD.value,this.bokX.value); obliczAlfa(this.bokD.value,this.bokX.value); return false;">
+    Podaj bok D = <input size="6" name="bokD">
+    Podaj bok X = <input size="6" name="bokX"><br><br>
+    <input type="submit" value="Oblicz"><br><br>
+    Drabina = <input size="6" name="wynikDrabina">
+    Kąt alfa = <input size="6" name="wynikAlfa">
+</form>
+
+<table>
+    <tr>
+        <td id="wynikDrabinaDiv" style="color:darkgreen; font-size:45px;"></td>
+    </tr>
+    <tr>
+        <td id="wynikAlfaDiv" style="color:darkred; font-size:45px;"></td>
+    </tr>
+</table>
+</body>
+</html>

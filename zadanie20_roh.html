@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<script type="text/javascript">
+
+function obliczAB() {
+    var xa = parseFloat(document.getElementById('xa').value);
+    var xb = parseFloat(document.getElementById('xb').value);
+    var ya = parseFloat(document.getElementById('ya').value);
+    var yb = parseFloat(document.getElementById('yb').value);
+
+    var dx = xa - xb;
+    var dy = ya - yb;
+    var dlugosc = Math.sqrt(Math.pow(dx,2) + Math.pow(dy,2));
+
+    document.getElementById("wynik").innerHTML = "Długość AB = " + dlugosc.toFixed(2) + " cm";
+}
+
+function obliczAC() {
+    var xa = parseFloat(document.getElementById('xa').value);
+    var xc = parseFloat(document.getElementById('xc').value);
+    var ya = parseFloat(document.getElementById('ya').value);
+    var yc = parseFloat(document.getElementById('yc').value);
+
+    var dx = xa - xc;
+    var dy = ya - yc;
+    var dlugosc = Math.sqrt(Math.pow(dx,2) + Math.pow(dy,2));
+
+    document.getElementById("wynik").innerHTML = "Długość AC = " + dlugosc.toFixed(2) + " cm";
+}
+
+function obliczBC() {
+    var xb = parseFloat(document.getElementById('xb').value);
+    var xc = parseFloat(document.getElementById('xc').value);
+    var yb = parseFloat(document.getElementById('yb').value);
+    var yc = parseFloat(document.getElementById('yc').value);
+
+    var dx = xb - xc;
+    var dy = yb - yc;
+    var dlugosc = Math.sqrt(Math.pow(dx,2) + Math.pow(dy,2));
+
+    document.getElementById("wynik").innerHTML = "Długość BC = " + dlugosc.toFixed(2) + " cm";
+}
+
+</script>
+
+Podaj współrzędną xa: <input type="text" id="xa"> cm &nbsp;&nbsp;&nbsp;
+Podaj współrzędną ya: <input type="text" id="ya"> cm<br><br>
+
+Podaj współrzędną xb: <input type="text" id="xb"> cm &nbsp;&nbsp;&nbsp;
+Podaj współrzędną yb: <input type="text" id="yb"> cm<br><br>
+
+Podaj współrzędną xc: <input type="text" id="xc"> cm &nbsp;&nbsp;&nbsp;
+Podaj współrzędną yc: <input type="text" id="yc"> cm<br><br>
+
+<input type="button" value="Długość AB" onclick="obliczAB()"><br><br>
+<input type="button" value="Długość AC" onclick="obliczAC()"><br><br>
+<input type="button" value="Długość BC" onclick="obliczBC()"><br><br>
+
+<div id="wynik" style="color:darkgreen; font-size:45px; font-family:Arial, sans-serif;"></div>
+
+</body>
+</html>

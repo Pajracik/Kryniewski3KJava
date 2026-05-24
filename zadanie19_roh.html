@@ -1,0 +1,31 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<script type="text/javascript">
+    function pole_roh() {
+        var bok = parseFloat(document.getElementById('dlugosc').value);
+        var pole = bok * bok;
+        document.getElementById("wynik").innerHTML = "Pole kwadratu = " + pole.toFixed(2) + " cm²";
+    }
+
+    function obwod_roh() {
+        var bok = parseFloat(document.getElementById('dlugosc').value);
+        var obwod = 4 * bok;
+        document.getElementById("wynik").innerHTML = "Obwód kwadratu = " + obwod.toFixed(2) + " cm";
+    }
+</script>
+
+<h1 style="color:darkblue; font-family:Verdana, sans-serif;">Wszystko o kwadracie</h1><br><br>
+Podaj długość boku: <input type="text" id="dlugosc" value="podaj długość"> cm<br><br><br>
+
+<input type="button" value="Oblicz pole" onclick="pole_roh()"><br><br>
+<input type="button" value="Oblicz obwód" onclick="obwod_roh()"><br><br>
+
+<div id="wynik" style="color:darkred; font-size:45px;"></div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Obliczanie objętości i pola walca</title>
+<script language="JavaScript">
+function obliczV(r,h) {
+    var promien = parseFloat(r);
+    var wysokosc = parseFloat(h);
+    var objetosc = Math.PI * promien * promien * wysokosc;
+
+    document.getElementsByName('objetosc')[0].value = objetosc.toFixed(2);
+    alert("Objętość V = " + objetosc.toFixed(2) + " cm³");
+    document.getElementById("wynikV").innerHTML = "<b>V = " + objetosc.toFixed(2) + " cm³</b><br>";
+}
+
+function obliczPc(r,h) {
+    var promien = parseFloat(r);
+    var wysokosc = parseFloat(h);
+    var pole = 2 * Math.PI * promien * promien + 2 * Math.PI * promien * wysokosc;
+
+    document.getElementsByName('poleWalca')[0].value = pole.toFixed(2);
+    alert("Pole powierzchni Pc = " + pole.toFixed(2) + " cm²");
+    document.getElementById("wynikPc").innerHTML = "<b>Pc = " + pole.toFixed(2) + " cm²</b>";
+}
+</script>
+</head>
+<body style="font-family:Verdana, sans-serif; color:darkblue;">
+<h2>Obliczanie objętości i pola walca</h2><br>
+
+<form name="formularz" onsubmit="obliczV(this.promien.value,this.wysokosc.value); obliczPc(this.promien.value,this.wysokosc.value); return false;">
+    Podaj promień r = <input size="6" name="promien">
+    Podaj wysokość h = <input size="6" name="wysokosc"><br><br>
+    <input type="submit" value="Oblicz">
+    <br><br>
+    V = <input size="6" name="objetosc">
+    Pc = <input size="6" name="poleWalca">
+</form>
+
+<table>
+    <tr id="wynikV" style="color:darkgreen; font-size:45px;"></tr>
+    <tr id="wynikPc" style="color:darkred; font-size:45px;"></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<script language="JavaScript">
+function obliczPole(a,b) {
+    var bokA = parseFloat(a);
+    var bokB = parseFloat(b);
+    var poleProst = bokA * bokB;
+
+    document.getElementsByName('wynikPole')[0].value = poleProst.toFixed(2);
+    alert("Pole = " + poleProst.toFixed(2) + " cm²");
+    document.getElementById("wynikPoleDiv").innerHTML = "<b>Pole = " + poleProst.toFixed(2) + " cm²</b>";
+}
+
+function obliczObwod(a,b) {
+    var bokA = parseFloat(a);
+    var bokB = parseFloat(b);
+    var obwodProst = 2 * bokA + 2 * bokB;
+
+    document.getElementsByName('wynikObwod')[0].value = obwodProst.toFixed(2);
+    alert("Obwód = " + obwodProst.toFixed(2) + " cm");
+    document.getElementById("wynikObwodDiv").innerHTML = "<b>Obwód = " + obwodProst.toFixed(2) + " cm</b>";
+}
+</script>
+</head>
+<body style="font-family:Arial, sans-serif; color:darkblue;">
+<h2>Obliczanie pola i obwodu prostokąta</h2><br>
+
+<form name="formularz" onsubmit="obliczPole(this.boka.value,this.bokb.value); obliczObwod(this.boka.value,this.bokb.value); return false;">
+    Podaj bok a = <input size="6" name="boka">
+    Podaj bok b = <input size="6" name="bokb"><br><br>
+    <input type="submit" value="Oblicz"><br><br>
+    Pole = <input size="6" name="wynikPole">
+    Obwód = <input size="6" name="wynikObwod">
+</form>
+
+<table>
+    <tr id="wynikPoleDiv" style="color:darkgreen; font-size:45px;"></tr>
+    <tr id="wynikObwodDiv" style="color:darkred; font-size:45px;"></tr>
+</table>
+
+</body>
+</html>
