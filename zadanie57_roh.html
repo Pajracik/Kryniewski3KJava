@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 57 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let start_roh = 20; 
+        let koniec_roh = start_roh + 15;
+        let licznik_roh = 0;
+
+        for (let i_roh = start_roh; i_roh <= koniec_roh; i_roh++) {
+            let pierw_2_roh = Math.sqrt(i_roh);
+            let pierw_4_roh = Math.sqrt(pierw_2_roh);
+
+            document.write("i=" + i_roh + "&nbsp;&nbsp;&nbsp;&nbsp;pierw_2(" + i_roh + ")=" + pierw_2_roh.toFixed(2) + "&nbsp;&nbsp;&nbsp;&nbsp;pierw_4(" + i_roh + ")=" + pierw_4_roh.toFixed(2) + "<br>");
+            licznik_roh++;
+
+            if (licznik_roh % 3 === 0) {
+                alert("Zatrzymanie ekranu (kliknij OK, aby kontynuować)");
+            }
+        }
+    </script>
+
+</body>
+</html>

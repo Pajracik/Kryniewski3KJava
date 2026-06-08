@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprawdzenie danych Rohde</title>
+</head>
+<body>
+
+    <div style="color:red; font-size:50px;">
+        <script>
+            let h_roh, a_roh, liczba1;
+
+            do {
+                liczba1 = prompt("wysokość=", "");
+                h_roh = parseFloat(liczba1);
+            } while (h_roh <= 0);
+
+            do {
+                liczba1 = prompt("podstawę=", "");
+                a_roh = parseFloat(liczba1);
+            } while (!(a_roh > 0));
+
+            let Pole = a_roh * h_roh / 2;
+            document.write("Pole=" + Pole.toFixed(2) + " cm^2" + "<br>");
+        </script>
+    </div>
+
+</body>
+</html>

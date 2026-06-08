@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 58 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let l1_roh = parseInt(prompt("Podaj pierwszą liczbę:", ""));
+        let l2_roh = parseInt(prompt("Podaj drugą liczbę:", ""));
+
+        if (l1_roh === l2_roh) {
+            confirm("Liczby są równe! Brak obliczeń.");
+        } 
+        else if (l1_roh < l2_roh) {
+            document.write("<div style='color: green;'>");
+            for (let i_roh = l1_roh; i_roh <= l2_roh; i_roh++) {
+                if (i_roh % 2 !== 0) {
+                    document.write(i_roh + "<br>");
+                }
+            }
+            document.write("</div>");
+        } 
+        else if (l1_roh > l2_roh) {
+            document.write("<div style='color: blue; font-size: 0.5em;'>");
+            for (let i_roh = l1_roh; i_roh >= l2_roh; i_roh--) {
+                if (i_roh % 2 !== 0) {
+                    document.write(i_roh + "<br>");
+                }
+            }
+            document.write("</div>");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 54 - Rohde</title>
+</head>
+<body>
+
+    <div style="font-family: monospace; white-space: pre; line-height: 12px;">
+        <script>
+            let imie_roh = prompt("Podaj imię:", "");
+            let nazwisko_roh = prompt("Podaj nazwisko:", "");
+
+            let a_roh = (nazwisko_roh.length % 4) + 5;
+            let b_roh = (imie_roh.length % 6) + 20;
+
+            for (let i = 1; i <= b_roh; i++) {
+                document.write("*");
+            }
+            document.write("<br>");
+
+            for (let i = 1; i <= a_roh - 2; i++) {
+                document.write("*");
+                for (let j = 1; j <= b_roh - 2; j++) {
+                    document.write("&nbsp;");
+                }
+                document.write("*<br>");
+            }
+
+            for (let i = 1; i <= b_roh; i++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        </script>
+    </div>
+
+</body>
+</html>

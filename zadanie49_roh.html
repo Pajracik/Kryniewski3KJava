@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 49 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let n_roh = prompt("Podaj liczbę n do obliczenia silni:", "");
+        n_roh = parseInt(n_roh);
+
+        let silnia_roh = 1;
+
+        if (n_roh > 0) {
+            for (let i_roh = 1; i_roh <= n_roh; i_roh++) {
+                silnia_roh = silnia_roh * i_roh;
+            }
+        }
+
+        document.write("n=" + n_roh + "<br>");
+        document.write(n_roh + "!=" + silnia_roh + "<br>");
+    </script>
+
+</body>
+</html>

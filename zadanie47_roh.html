@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 47 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let a_roh, b_roh, c_roh, liczba1, liczba2, liczba3;
+
+        do {
+            liczba1 = prompt("Podaj bok a:", "");
+            a_roh = parseFloat(liczba1);
+
+            liczba2 = prompt("Podaj bok b:", "");
+            b_roh = parseFloat(liczba2);
+
+            liczba3 = prompt("Podaj bok c:", "");
+            c_roh = parseFloat(liczba3);
+
+        } while (!(a_roh > 0 && b_roh > 0 && c_roh > 0 && (a_roh + b_roh > c_roh) && (a_roh + c_roh > b_roh) && (c_roh + b_roh > a_roh)));
+
+        document.write("<h3>Wczytane boki tworzą trójkąt:</h3>");
+        document.write("a = " + a_roh + "<br>");
+        document.write("b = " + b_roh + "<br>");
+        document.write("c = " + c_roh + "<br>");
+    </script>
+
+</body>
+</html>

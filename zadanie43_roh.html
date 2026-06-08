@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 43 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let koniec_petli_roh = prompt("Podaj liczbę końcową:");
+        koniec_petli_roh = parseInt(koniec_petli_roh);
+
+        if (!isNaN(koniec_petli_roh) && koniec_petli_roh >= 2) {
+            let wynik_roh = "";
+            for (let i_r = 2; i_r <= koniec_petli_roh; i_r += 2) {
+                wynik_roh += i_r + " ";
+            }
+            alert("Liczby parzyste:\n" + wynik_roh);
+        } else {
+            alert("Błędne dane!");
+        }
+    </script>
+
+</body>
+</html>

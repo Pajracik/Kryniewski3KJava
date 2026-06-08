@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 45 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let wczytana_liczba_roh = prompt("Podaj liczbę:");
+        wczytana_liczba_roh = parseInt(wczytana_liczba_roh);
+
+        document.write("<p>ilość wykonania pętli = 11</p>");
+        document.write("<p>wielkość liter = 42px</p><hr>");
+
+        if (wczytana_liczba_roh % 2 === 0) {
+            for (let i_r = 1; i_r <= 11; i_r++) {
+                document.write("<span style='font-size: 42px; color: blue;'>Rohde</span><br>");
+            }
+        } else {
+            for (let i_r = 1; i_r <= 11; i_r++) {
+                document.write("<span style='font-size: 42px; color: green;'>Tomasz</span><br>");
+            }
+        }
+    </script>
+
+</body>
+</html>

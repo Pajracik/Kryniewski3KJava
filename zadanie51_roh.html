@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 51 - Rohde</title>
+</head>
+<body>
+
+    <script>
+        let ile_razy_roh = prompt("ile razy powtórzyć=", "5");
+        ile_razy_roh = parseInt(ile_razy_roh);
+
+        let inicjaly_roh = prompt("podaj twoje inicjały=", "TR");
+
+        for (var i = 1; i <= ile_razy_roh; i++) {
+            for (var k = 1; k <= i; k++) {
+                document.write("&nbsp;");
+            }
+            document.write(i + "_" + inicjaly_roh + "_" + i + "<br>");
+        }
+    </script>
+
+</body>
+</html>
